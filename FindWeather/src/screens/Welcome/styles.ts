@@ -1,28 +1,20 @@
+import { ScrollViewProps } from 'react-native';
 import styled from 'styled-components/native';
 import theme from '../../theme';
 
-const Container = styled.SafeAreaView`
-  background-color: ${theme.colors.dark};
+const Container = styled.ScrollView.attrs<ScrollViewProps>(() => ({
+  showsVerticalScrollIndicator: false
+}))`
   flex: 1;
-  justify-content: center;
+  background-color: ${theme.colors.dark};
+  padding: 0 16px;
 `;
 
 const ContainerImage = styled.View`
   align-items: center;
 `;
 
-const Image = styled.Image`
-  width: 200px;
-  height: 200px;
-`;
-
-const ContainerTextButton = styled.View`
-  padding: 0 16px;
-`;
-
 export default {
-  ContainerImage,
   Container,
-  Image,
-  ContainerTextButton
+  ContainerImage
 };
